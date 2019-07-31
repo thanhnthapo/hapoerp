@@ -66,29 +66,4 @@
         </div>
     </div>
     </div>
-    <style>
-        form.form-search {
-            padding: 20px 0;
-        }
-
-        form.form-search input[type=text] {
-            padding: 10px;
-            border: 1px solid grey;
-            float: left;
-            background: #f1f1f1;
-        }
-
-        form.form-search button {
-            float: left;
-            padding: 12px;
-            color: white;
-            font-size: 17px;
-            border: 1px solid grey;
-            cursor: pointer;
-        }
-
-        form.form-search button:hover {
-            background: #0b7dda;
-        }
-    </style>
 @endsection

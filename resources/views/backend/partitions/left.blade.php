@@ -6,8 +6,3 @@
         <li class=""><a href=""><i class="fa fa-users"></i> Manager Customer</a></li>
     </ul>
 </div>
-<style>
-    li.active {
-        background: #8e99008c;
-    }
-</style>

@@ -19,11 +19,11 @@ class UserController extends Controller
 
     public function index()
     {
-        $userPage = config('app.user_paginate');
-        $users = User::paginate($userPage);
-        return view('backend.users.index', [
+        $users = User::paginate(config('app.user_paginate'));
+        $param =  [
             'users' => $users,
-        ]);
+        ];
+        return view('backend.users.index', $param);
     }
 
     /**
@@ -44,14 +44,14 @@ class UserController extends Controller
      */
     public function store(CreateUserRequest $request)
     {
-        $user = new User();
         $request['password'] = Hash::make($request->password);
-        $filename = $request->file('avatar')->getClientOriginalName();
-        $user->avatar = time() . "_" . $filename;
-        $request->file('avatar')->move('uploads', $filename);
+        $avatar = $request->file('avatar')->getClientOriginalName();
+        $avatarName = uniqid() . "_" . time() . "_" . $avatar;
+        $request->avatar =  $avatarName;
+        $request->file('avatar')->move('uploads', $avatarName);
         $user = User::create([
             'name' => $request->name,
-            'avatar' => $filename,
+            'avatar' => $avatarName,
             'gender' => $request->gender,
             'email' => $request->email,
             'phone' => $request->phone,
@@ -72,9 +72,10 @@ class UserController extends Controller
     public function show($id)
     {
         $user = User::findOrFail($id);
-        return view('backend.users.show', [
+        $param = [
             'user' => $user,
-        ]);
+        ];
+        return view('backend.users.show', $param);
     }
 
     /**
@@ -86,9 +87,10 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail($id);
-        return view('backend.users.edit', [
-            'user' => $user,
-        ]);
+        $param = [
+            'user' => $user
+        ];
+        return view('backend.users.edit', $param);
     }
 
     /**
@@ -101,12 +103,13 @@ class UserController extends Controller
     public function update(UpdateUserRequest $request, $id)
     {
         $user = User::findOrFail($id);
-        $filename = time() . "_" . $request->file('avatar')->getClientOriginalName();
-        $request->avatar = $filename;
-        $request->file('avatar')->move('uploads', $filename);
+        $avatar = $request->file('avatar')->getClientOriginalName();
+        $avatarName = uniqid(). "_" . time() . "_" . $avatar;
+        $request->avatar =  $avatarName;
+        $request->file('avatar')->move('uploads', $avatarName);;
         $user->update([
             'name' => $request->name,
-            'avatar' => $filename,
+            'avatar' => $avatarName,
             'gender' => $request->gender,
             'email' => $request->email,
             'phone' => $request->phone,

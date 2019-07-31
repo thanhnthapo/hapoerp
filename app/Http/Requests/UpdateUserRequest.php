@@ -28,7 +28,7 @@ class UpdateUserRequest extends FormRequest
             'email' => 'required|email|unique:users,email,'.$this->user,
             'address'   => 'required',
             'avatar' => 'required|mimes:jpg,png,jpeg',
-            'phone'   => 'required|unique:users,phone,'.$this->user,
+            'phone'   => 'required|numeric|unique:users,phone,'.$this->user,
             'password'   => 'required|min:6',
             'dob' => 'required|date',
         ];

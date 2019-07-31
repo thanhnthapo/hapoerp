@@ -27,28 +27,5 @@
             </div>
         </div>
     </div>
-
 @endsection
-<style>
-    .card {
-        border-radius: 40px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        max-width: 650px;
-        padding: 20px 100px;
-        margin: 80px auto;
-    }
 
-    .card h1 {
-        color: #5d561b;
-    }
-
-
-    .card .detail a {
-        font-size: 22px;
-        color: black;
-    }
-
-    button:hover, a:hover {
-        opacity: 0.7;
-    }
-</style>

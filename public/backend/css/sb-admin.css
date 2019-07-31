@@ -1,8 +1,8 @@
-/* 
+/*
 Author: Start Bootstrap - http://startbootstrap.com
 'SB Admin' HTML Template by Start Bootstrap
 
-All Start Bootstrap themes are licensed under Apache 2.0. 
+All Start Bootstrap themes are licensed under Apache 2.0.
 For more info and more free Bootstrap 3 HTML themes, visit http://startbootstrap.com!
 */
 
@@ -179,11 +179,55 @@ table.tablesorter thead tr th:hover {
 .content-header{
   position: relative;
   font-weight: bold;
-  margin-bottom:5px; 
+  margin-bottom:5px;
   padding: 5px;
   background: #ecededcc;
   color: #cc8805;
 }
 .img-user {
     width: 100px;
+}
+form.form-search {
+    padding: 20px 0;
+}
+
+form.form-search input[type=text] {
+    padding: 10px;
+    border: 1px solid grey;
+    float: left;
+    background: #f1f1f1;
+}
+
+form.form-search button {
+    float: left;
+    padding: 12px;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    cursor: pointer;
+}
+
+form.form-search button:hover {
+    background: #0b7dda;
+}
+.card {
+    border-radius: 40px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 650px;
+    padding: 20px 100px;
+    margin: 80px auto;
+}
+
+.card h1 {
+    color: #5d561b;
+}
+
+
+.card .detail a {
+    font-size: 22px;
+    color: black;
+}
+
+button:hover, a:hover {
+    opacity: 0.7;
 }

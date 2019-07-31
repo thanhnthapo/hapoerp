@@ -17,7 +17,8 @@
                 <div class="form-group col-sm-8">
                     <label>Avatar<span class="text-danger"> *</span></label>
                     <input type="file" name="avatar" id="avatar" class="form-control">
-                    <label for="">Avatar cũ: </label><img src="{!!url('uploads/'.$user->avatar)!!}" alt="" class="img-thumbnail img-user">
+                    <label for="">Avatar cũ: </label><img src="{!!url('uploads/'.$user->avatar)!!}" alt=""
+                                                          class="img-thumbnail img-user">
                     <p class="text-danger">{{ $errors->first('avatar')}}</p>
                 </div>
                 <div class="form-group col-sm-8">
@@ -59,6 +60,5 @@
             </form>
         </div>
     </div>
-
 @endsection
 
